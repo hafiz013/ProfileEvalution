@@ -21,8 +21,22 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, Searching::class.java))
         })
         btnMostView = findViewById(R.id.btnMostView)
+        btnMostView.setOnClickListener(View.OnClickListener {
+            startActivity(Intent(this, ViewArticle::class.java).apply {
+                putExtra("text", "mostView")
+            })
+        })
         btnMostShared = findViewById(R.id.btnMostShared)
+        btnMostShared.setOnClickListener(View.OnClickListener {
+            startActivity(Intent(this, ViewArticle::class.java).apply {
+                putExtra("text", "mostShared")
+            })
+        })
         btnMostEmail = findViewById(R.id.btnMostEmail)
-
+        btnMostEmail.setOnClickListener(View.OnClickListener {
+            startActivity(Intent(this, ViewArticle::class.java).apply {
+                putExtra("text", "mostEmail")
+            })
+        })
     }
 }

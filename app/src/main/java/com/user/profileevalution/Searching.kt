@@ -26,11 +26,12 @@ class Searching : AppCompatActivity() {
         })
 
         searchBtn = findViewById(R.id.btnSearch)
+        searchBtn.isEnabled = false
 
         editText = findViewById(R.id.searchtxt)
         editText.addTextChangedListener(object :TextWatcher{
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                TODO("Not yet implemented")
+
             }
 
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
@@ -44,14 +45,13 @@ class Searching : AppCompatActivity() {
             }
 
             override fun afterTextChanged(p0: Editable?) {
-                TODO("Not yet implemented")
             }
 
         })
 
         searchBtn.setOnClickListener(View.OnClickListener {
             startActivity(Intent(this, ViewArticle::class.java).apply {
-                putExtra("text", editText.toString())
+                putExtra("text", editText.text.toString())
             })
         })
     }
